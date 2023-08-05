@@ -3,7 +3,8 @@ import pydicom
 from docxtpl import DocxTemplate
 
 def read_dcm_file(dcm_file, parameters):
-    ds = pydicom.dcmread(dcm_file)
+    ds = pydicom.dcmread(dcm_file) 
+    print(ds)
     attributes = {}
     for param in parameters:
         attributes[param['name']]=ds[param['name']].value
